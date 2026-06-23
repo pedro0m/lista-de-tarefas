@@ -19,11 +19,11 @@ def completeTask(list_task):
     if ask == 1:
         v = int(input('Enter a Number Task You Need Complete: '))
         list_task.pop(v-1)
-        print(25 * '=')
+        print(21 * '=')
         print('Your Task Are Complete')
 
     elif ask == 2:
-        print(25 * '=')
+        print(21 * '=')
         print('Coming Back...')
 
     else:
@@ -31,35 +31,35 @@ def completeTask(list_task):
 
 def firstOption(list_task):
     while True:
-        print(25 * '=')
+        print(21 * '=')
         ask = int(input('1 - Show All Tasks\n2 - Create New Task\n3 - Complete One Task\n4 - Exit The Program\nWhat You Need?: '))
 
         if ask == 1:
-            print(25 * '=')
+            print(21 * '=')
             showTask(list_task)
 
         elif ask == 2:
-            print(25 * '=')
+            print(21 * '=')
             createTask(list_task)
 
         elif ask == 3:
             if list_task == []:
-                print(25 * '=')
+                print(21 * '=')
                 print('Your List Are Empty.')
 
             else:
-                print(25 * '=')
+                print(21 * '=')
                 showTask(list_task)
-                print(25 * '=')
+                print(21 * '=')
                 completeTask(list_task)
 
         elif ask == 4:
-            print(25 * '=')
+            print(21 * '=')
             print('Closing...')
             break
 
         else:
-            print(25 * '=')
+            print(21 * '=')
             print('Write Only Numbers of 1 at 3')
 
 firstOption(list_task)
