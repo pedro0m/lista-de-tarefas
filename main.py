@@ -55,7 +55,7 @@ def firstOption(list_task):
 
         elif ask == 4:
             print(25 * '=')
-            print('Leaving Out...')
+            print('Closing...')
             break
 
         else:
