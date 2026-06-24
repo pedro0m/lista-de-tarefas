@@ -44,7 +44,8 @@ def concluirTarefa(lista_tarefa):
 def mostraMenu(lista_tarefa):
     while True:
         print(25 * '=')
-        pergunta = input('1 - Mostrar Lista de Tarefas\n2 - Criar Uma Tarefa\n3 - Concluir Uma Tarefa\n4 - Sair do Programa\nO que quer fazer?: ')
+        pergunta = input('1 - Mostrar Lista de Tarefas\n2 - Criar Uma Tarefa\n3 - Concluir Uma Tarefa' \
+        '\n4 - Sair do Programa\nO que quer fazer?: ')
 
         if pergunta == "1":
             print(25 * '=')
