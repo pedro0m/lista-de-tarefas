@@ -1,65 +1,77 @@
-list_task = list()
+lista_tarefa = list()
 
-def showTask(list_task):
-    if list_task == []:
-        print('Your List Are Empty.')
-
-    else:
-        for n, t in enumerate(list_task):
-            print(f'{n+1} - {t}')
-
-def createTask(list_task):
-    new_task = str(input('Write a New Task: '))
-    list_task.append(new_task)
-
-def completeTask(list_task):
-    ask = int(input('1 - Complete Task\n2 - Return to Options' \
-                    '\nWhat You Need?: '))
-    
-    if ask == 1:
-        v = int(input('Enter a Number Task You Need Complete: '))
-        list_task.pop(v-1)
-        print(21 * '=')
-        print('Your Task Are Complete')
-
-    elif ask == 2:
-        print(21 * '=')
-        print('Coming Back...')
+def mostraTarefa(lista_tarefa):
+    if lista_tarefa == []:
+        print('Sua Lista de Tarefas Esta Vazia.')
 
     else:
-        print('Write Only Numbers of 1 at 3')
+        for indice, valor in enumerate(lista_tarefa):
+            print(f'{indice+1} - {valor}')
 
-def firstOption(list_task):
+def criarTarefa(lista_tarefa):
+    nova_tarefa = str(input('Digite Sua Nova Tarefa: '))
+    lista_tarefa.append(nova_tarefa)
+
+def concluirTarefa(lista_tarefa):
     while True:
-        print(21 * '=')
-        ask = int(input('1 - Show All Tasks\n2 - Create New Task\n3 - Complete One Task\n4 - Exit The Program\nWhat You Need?: '))
+        pergunta = input('1 - Concluir Uma Tarefa\n2 - Voltar Para o Menu' \
+                    '\nO que quer fazer?: ')
 
-        if ask == 1:
-            print(21 * '=')
-            showTask(list_task)
-
-        elif ask == 2:
-            print(21 * '=')
-            createTask(list_task)
-
-        elif ask == 3:
-            if list_task == []:
-                print(21 * '=')
-                print('Your List Are Empty.')
+        if pergunta == "1":
+            print(25 * '=')
+            nome_tarefa = input('Digite o Nome da Tarefa: ')
+            if nome_tarefa in lista_tarefa:
+                lista_tarefa.remove(nome_tarefa)
+                print(25 * '=')
+                print(f'A Tarefa {nome_tarefa} Foi Concluida!.')
+                break
 
             else:
-                print(21 * '=')
-                showTask(list_task)
-                print(21 * '=')
-                completeTask(list_task)
+                print(25 * '=')
+                print('Digite o Nome Exato da Tarefa.')
+                print(25 * '=')
+                mostraTarefa(lista_tarefa)
+                print(25 * '=')
 
-        elif ask == 4:
-            print(21 * '=')
-            print('Closing...')
+        elif pergunta == "2":
+            print(25 * '=')
+            print('Voltando...')
             break
 
         else:
-            print(21 * '=')
-            print('Write Only Numbers of 1 at 3')
+            print('Digite Apenas Numeros de 1 a 2')
 
-firstOption(list_task)
+def mostraMenu(lista_tarefa):
+    while True:
+        print(25 * '=')
+        pergunta = input('1 - Mostrar Lista de Tarefas\n2 - Criar Uma Tarefa\n3 - Concluir Uma Tarefa\n4 - Sair do Programa\nO que quer fazer?: ')
+
+        if pergunta == "1":
+            print(25 * '=')
+            mostraTarefa(lista_tarefa)
+
+        elif pergunta == "2":
+            print(25 * '=')
+            criarTarefa(lista_tarefa)
+
+        elif pergunta == "3":
+            if lista_tarefa == []:
+                print(25 * '=')
+                print('Sua Lista de Tarefas Esta Vazia.')
+
+            else:
+                print(25 * '=')
+                mostraTarefa(lista_tarefa)
+                print(25 * '=')
+                concluirTarefa(lista_tarefa)
+
+        elif pergunta == "4":
+            print(25 * '=')
+            print('Saindo...')
+            break
+
+        else:
+            print(25 * '=')
+            print('Digite Apenas Numeros de 1 a 4')
+
+mostraMenu(lista_tarefa)
